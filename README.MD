@@ -10,7 +10,6 @@
 - **gRPC Support:** jwalker operates over gRPC, making it compatible with a vast ecosystem of microservices and service meshes.
 
 ## Getting Started
-
 Follow these steps to set up the `jwalker` in your project:
 
 ### Install
@@ -31,12 +30,11 @@ export GRPC_PORT="9123"
 ### Run
 ```shell
 # use grpc
-npm run serve -- grpcd
+npm run serve -- grpc
 ```
 
-## Dockerize
-
-To run or deploy using Docker containers follow these steps
+## Run in container
+To development using Docker containers follow these steps
 
 ### Build you own image
 ```shell
@@ -49,4 +47,18 @@ docker build -t jwalker -f DockerfileAppleSilicon .
 ### Run container
 ```shell
 docker run -d -t -p 9123:9123 --name jwalker -v /home/root/jwalker:/src jwalker:latest
+```
+
+## Deploy in container
+To deploy using Docker containers follow these steps
+
+### Build image
+```shell
+# grpc variant
+docker build -t jwalker -f DockerfileDeploymentGRPC .
+```
+
+### Run container
+```shell
+docker run -d -t -p 9123:9123 -e GRPC_HOST="0.0.0.0" -e GRPC_PORT="9123" --name jwalker -v /home/root/jwalker:/src jwalker:latest
 ```
