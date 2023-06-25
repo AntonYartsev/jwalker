@@ -33,3 +33,20 @@ export GRPC_PORT="9123"
 # use grpc
 npm run serve -- grpcd
 ```
+
+## Dockerize
+
+To run or deploy using Docker containers follow these steps
+
+### Build you own image
+```shell
+# default
+docker build -t jwalker .
+# apple silicon (tested on m1)
+docker build -t jwalker -f DockerfileAppleSilicon .
+```
+
+### Run container
+```shell
+docker run -d -t -p 9123:9123 --name jwalker -v /home/root/jwalker:/src jwalker:latest
+```
