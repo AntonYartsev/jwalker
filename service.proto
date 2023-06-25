@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package jwalker;
+
+service Parser {
+  rpc Parse (ParseRequest) returns (Response) {}
+}
+
+message ParseRequest {
+  string url = 1;
+}
+
+message Response {
+  string response = 1;
+}
