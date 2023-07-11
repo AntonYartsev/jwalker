@@ -30,7 +30,7 @@ export GRPC_PORT="9123"
 ### Run
 ```shell
 # use grpc
-npm run serve -- grpc
+npm run serve -- grpc jwalker
 ```
 
 ## Run in container
@@ -46,7 +46,7 @@ docker build -t jwalker -f DockerfileAppleSilicon .
 
 ### Run container
 ```shell
-docker run -d -t -p 9123:9123 --name jwalker -v /home/root/jwalker:/src jwalker:latest
+docker run -d -t -p 9123:9123 --name jwalker -v /home/root/jwalker:/src -v /var/run/docker.sock:/var/run/docker.sock jwalker:latest
 ```
 
 ## Deploy in container

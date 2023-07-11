@@ -2,8 +2,14 @@ syntax = "proto3";
 
 package jwalker;
 
+import "google/protobuf/empty.proto";
+
 service Parser {
   rpc Parse (ParseRequest) returns (Response) {}
+}
+
+service System {
+  rpc Restart (google.protobuf.Empty) returns (google.protobuf.Empty) {}
 }
 
 message ParseRequest {

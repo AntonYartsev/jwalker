@@ -11,6 +11,7 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.8.16",
     "@grpc/proto-loader": "^0.7.7",
+    "dockerode": "^3.3.5",
     "puppeteer": "^20.7.3"
   }
 }
