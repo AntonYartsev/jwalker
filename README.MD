@@ -60,5 +60,5 @@ docker build -t jwalker -f DockerfileDeploymentGRPC .
 
 ### Run container
 ```shell
-docker run -d -t -p 9123:9123 -e GRPC_HOST="0.0.0.0" -e GRPC_PORT="9123" --name jwalker -v /home/root/jwalker:/src -v /var/run/docker.sock:/var/run/docker.sock jwalker:latest
+docker run -d -t -p 9123:9123 -e GRPC_HOST="0.0.0.0" -e GRPC_PORT="9123" --name jwalker --restart=always -v /home/root/jwalker:/src -v /var/run/docker.sock:/var/run/docker.sock jwalker:latest
 ```

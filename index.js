@@ -57,6 +57,7 @@ if (args.length == 0) {
 
         const container = docker.getContainer(containerInfo.Id);
         container.restart();
+        // container stops but does not start. temporary fix - use -restart=always
         callback(null);
     }
 } else {
